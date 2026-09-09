@@ -1,0 +1,1070 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#05080f">
+
+<title>Bombay Cricket Analyst</title>
+
+<!-- =========================
+     META PIXEL CODE
+========================= -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '937872818759096');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img
+height="1"
+width="1"
+style="display:none"
+src="https://www.facebook.com/tr?id=937872818759096&ev=PageView&noscript=1"
+/>
+</noscript>
+
+<!-- End Meta Pixel Code -->
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff;
+  background:
+    radial-gradient(circle at 50% 20%,#143e68 0%,transparent 35%),
+    radial-gradient(circle at 0% 100%,#003b5c 0%,transparent 30%),
+    linear-gradient(135deg,#02050a,#07111d 55%,#020409);
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.light{
+  position:absolute;
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  filter:blur(70px);
+  opacity:.16;
+  animation:float 7s ease-in-out infinite;
+}
+
+.l1{
+  background:#00aaff;
+  left:-100px;
+  top:-100px;
+}
+
+.l2{
+  background:#ffd500;
+  right:-110px;
+  top:10%;
+  animation-delay:2s;
+}
+
+.l3{
+  background:#0077ff;
+  left:35%;
+  bottom:-130px;
+  animation-delay:4s;
+}
+
+@keyframes float{
+  50%{
+    transform:scale(1.25);
+    opacity:.28;
+  }
+}
+
+/* Stadium */
+
+.stadium{
+  position:absolute;
+  width:150%;
+  height:42%;
+  left:-25%;
+  bottom:-14%;
+  border-radius:50% 50% 0 0;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #061c2b 0 8px,
+      #082a3c 9px 17px
+    );
+
+  transform:perspective(500px) rotateX(14deg);
+
+  box-shadow:
+    0 -30px 90px #008cff22,
+    inset 0 20px 50px #0008;
+}
+
+/* Stadium lights */
+
+.lights{
+  position:absolute;
+  width:100%;
+  height:35%;
+  top:8%;
+  display:flex;
+  justify-content:space-between;
+  padding:0 10px;
+  opacity:.5;
+}
+
+.lights span{
+  width:90px;
+  height:5px;
+  border-radius:50%;
+  background:#fff;
+
+  box-shadow:
+    0 0 12px #fff,
+    0 0 30px #7ddcff,
+    0 0 70px #008cff;
+}
+
+/* =========================
+   TICKER
+========================= */
+
+.ticker{
+  position:fixed;
+  z-index:20;
+  left:0;
+  width:100%;
+  height:27px;
+  overflow:hidden;
+  white-space:nowrap;
+
+  background:#02060cea;
+  border-bottom:1px solid #20aaff55;
+}
+
+.bottom{
+  top:auto;
+  bottom:0;
+  border-top:1px solid #20aaff55;
+  border-bottom:0;
+}
+
+.track{
+  height:100%;
+  display:inline-flex;
+  align-items:center;
+  gap:45px;
+  padding-left:100%;
+  min-width:max-content;
+
+  animation:scroll 28s linear infinite;
+}
+
+.reverse{
+  animation-direction:reverse;
+}
+
+.track span{
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.7px;
+  color:#eaf7ff;
+}
+
+@keyframes scroll{
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-100%);
+  }
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.wrap{
+  position:relative;
+  z-index:5;
+
+  width:min(100%,680px);
+  height:100dvh;
+
+  margin:auto;
+  padding:34px 8px 31px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card{
+  width:100%;
+  max-height:94dvh;
+  overflow:hidden;
+  position:relative;
+
+  text-align:center;
+
+  padding:15px 15px 12px;
+
+  border-radius:28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(11,28,45,.94),
+      rgba(2,8,15,.97)
+    );
+
+  border:1px solid rgba(55,181,255,.38);
+
+  box-shadow:
+    0 25px 70px #000b,
+    0 0 50px #008cff1c,
+    inset 0 1px 0 #ffffff12;
+}
+
+/* Top shine */
+
+.card:before{
+  content:"";
+
+  position:absolute;
+  left:10%;
+  right:10%;
+  top:0;
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #00c8ff,
+      #ffd400,
+      transparent
+    );
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+  width:92px;
+  height:92px;
+
+  margin:0 auto 7px;
+
+  border-radius:50%;
+  padding:3px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00bfff,
+      #ffd400,
+      #00aaff
+    );
+
+  box-shadow:
+    0 0 25px #00aaff55,
+    0 0 50px #ffd00018;
+
+  animation:logoPulse 4s ease-in-out infinite;
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:3px solid #06111c;
+}
+
+@keyframes logoPulse{
+  50%{
+    transform:scale(1.035);
+
+    box-shadow:
+      0 0 35px #00aaff77,
+      0 0 55px #ffd00022;
+  }
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+
+  padding:6px 13px;
+
+  border-radius:30px;
+
+  background:#071b2c;
+
+  border:1px solid #1baaff66;
+
+  color:#9edfff;
+
+  font-size:9px;
+  font-weight:900;
+
+  letter-spacing:.8px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1{
+  margin:7px 0 2px;
+
+  font-size:clamp(32px,8vw,52px);
+
+  line-height:.9;
+
+  font-weight:1000;
+
+  letter-spacing:-1.5px;
+
+  color:#fff;
+
+  text-shadow:0 0 25px #008cff35;
+}
+
+h1 span{
+  display:block;
+
+  margin-top:5px;
+
+  font-size:.55em;
+
+  letter-spacing:1.2px;
+
+  font-style:italic;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffe000,
+      #fff,
+      #00c8ff
+    );
+
+  -webkit-background-clip:text;
+
+  color:transparent;
+}
+
+.sub{
+  margin:7px 0 8px;
+
+  color:#a9c3d7;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  letter-spacing:.4px;
+}
+
+/* =========================
+   TAG
+========================= */
+
+.tag{
+  display:inline-block;
+
+  margin-bottom:9px;
+
+  padding:5px 12px;
+
+  border-radius:6px;
+
+  background:#08233b;
+
+  border-left:3px solid #ffd400;
+
+  border-right:1px solid #168dff55;
+
+  color:#e5f7ff;
+
+  font-size:8px;
+
+  font-weight:900;
+
+  letter-spacing:.7px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:7px;
+
+  margin-bottom:8px;
+}
+
+.box{
+  min-height:57px;
+
+  padding:8px 7px;
+
+  display:flex;
+
+  align-items:center;
+
+  text-align:left;
+
+  gap:8px;
+
+  border-radius:13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0a2236,
+      #06121f
+    );
+
+  border:1px solid #168dff44;
+
+  box-shadow:
+    inset 0 1px 0 #ffffff08;
+
+  transition:.25s;
+}
+
+.box:hover{
+  border-color:#ffd40088;
+  transform:translateY(-2px);
+}
+
+.icon{
+  width:32px;
+  height:32px;
+
+  flex:none;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:9px;
+
+  background:#082a43;
+
+  border:1px solid #20aaff44;
+
+  font-size:16px;
+}
+
+.box b{
+  display:block;
+
+  color:#fff;
+
+  font-size:9px;
+
+  margin-bottom:2px;
+}
+
+.box small{
+  display:block;
+
+  color:#91aabd;
+
+  font-size:7.5px;
+
+  line-height:1.2;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:6px;
+
+  margin-bottom:9px;
+}
+
+.stat{
+  padding:7px 3px;
+
+  border-radius:11px;
+
+  background:#030a12;
+
+  border:1px solid #1b8ed944;
+}
+
+.stat strong{
+  display:block;
+
+  color:#ffd900;
+
+  font-size:15px;
+
+  line-height:1.1;
+}
+
+.stat span{
+  font-size:7px;
+
+  color:#829bad;
+}
+
+/* =========================
+   TELEGRAM CTA
+========================= */
+
+.join{
+  min-height:52px;
+
+  width:100%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ffd400,
+      #ffb700,
+      #ffe600
+    );
+
+  color:#050b12;
+
+  text-decoration:none;
+
+  font-size:16px;
+
+  font-weight:1000;
+
+  letter-spacing:.2px;
+
+  box-shadow:
+    0 8px 25px #ffd0002d;
+
+  animation:buttonPulse 2.5s ease-in-out infinite;
+
+  cursor:pointer;
+}
+
+.join:hover{
+  transform:translateY(-1px);
+}
+
+@keyframes buttonPulse{
+  50%{
+    box-shadow:
+      0 10px 35px #ffd00055;
+  }
+}
+
+.note{
+  margin-top:5px;
+
+  color:#687e90;
+
+  font-size:7px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-height:720px){
+
+  .wrap{
+    padding-top:30px;
+    padding-bottom:28px;
+  }
+
+  .card{
+    padding:10px 11px 9px;
+    border-radius:23px;
+  }
+
+  .logo{
+    width:72px;
+    height:72px;
+  }
+
+  .badge{
+    padding:4px 10px;
+    font-size:7.5px;
+  }
+
+  h1{
+    font-size:27px;
+  }
+
+  .sub{
+    font-size:9px;
+    margin:5px 0;
+  }
+
+  .tag{
+    font-size:7px;
+    padding:4px 9px;
+    margin-bottom:6px;
+  }
+
+  .grid{
+    gap:5px;
+    margin-bottom:6px;
+  }
+
+  .box{
+    min-height:46px;
+    padding:5px;
+    gap:6px;
+  }
+
+  .icon{
+    width:27px;
+    height:27px;
+    font-size:13px;
+  }
+
+  .box b{
+    font-size:8px;
+  }
+
+  .box small{
+    font-size:6.5px;
+  }
+
+  .stats{
+    margin-bottom:6px;
+  }
+
+  .stat{
+    padding:5px 2px;
+  }
+
+  .stat strong{
+    font-size:12px;
+  }
+
+  .stat span{
+    font-size:6px;
+  }
+
+  .join{
+    min-height:44px;
+    border-radius:14px;
+    font-size:13px;
+  }
+
+  .note{
+    font-size:6px;
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media(max-width:380px){
+
+  .ticker{
+    height:23px;
+  }
+
+  .track{
+    gap:25px;
+  }
+
+  .track span{
+    font-size:7px;
+  }
+
+  .wrap{
+    padding:26px 4px;
+  }
+
+  .card{
+    padding:7px;
+  }
+
+  .logo{
+    width:64px;
+    height:64px;
+  }
+
+  h1{
+    font-size:23px;
+  }
+
+  .sub{
+    font-size:8px;
+  }
+
+  .grid{
+    gap:4px;
+  }
+
+  .box{
+    min-height:42px;
+  }
+
+  .icon{
+    width:24px;
+    height:24px;
+    font-size:11px;
+  }
+
+  .box b{
+    font-size:7.5px;
+  }
+
+  .box small{
+    font-size:6px;
+  }
+
+  .join{
+    min-height:41px;
+    font-size:12px;
+  }
+
+  .note{
+    display:none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     BACKGROUND
+========================= -->
+
+<div class="bg">
+
+  <div class="light l1"></div>
+  <div class="light l2"></div>
+  <div class="light l3"></div>
+
+  <div class="lights">
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="stadium"></div>
+
+</div>
+
+
+<!-- =========================
+     TOP TICKER
+========================= -->
+
+<div class="ticker">
+
+  <div class="track">
+
+    <span>🏏 CRICKET ANALYSIS</span>
+    <span>⚡ MATCH INSIGHTS</span>
+    <span>🏆 TOSS ANALYSIS</span>
+    <span>👥 PLAYING XI</span>
+    <span>📊 TEAM PERFORMANCE</span>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN CARD
+========================= -->
+
+<main class="wrap">
+
+<section class="card">
+
+  <!-- LOGO -->
+
+  <div class="logo">
+
+    <img
+      src="bombay_cricket_analyst_logo.jpg"
+      alt="Bombay Cricket Analyst"
+    >
+
+  </div>
+
+
+  <!-- BADGE -->
+
+  <div class="badge">
+
+    ✓ OFFICIAL CRICKET CHANNEL
+
+  </div>
+
+
+  <!-- TITLE -->
+
+  <h1>
+
+    BOMBAY
+
+    <span>CRICKET ANALYST</span>
+
+  </h1>
+
+
+  <p class="sub">
+
+    Analyze • Understand • Follow the Game
+
+  </p>
+
+
+  <!-- TAG -->
+
+  <div class="tag">
+
+    SMART CRICKET ANALYSIS & MATCH INSIGHTS
+
+  </div>
+
+
+  <!-- FEATURES -->
+
+  <div class="grid">
+
+
+    <div class="box">
+
+      <div class="icon">🎯</div>
+
+      <div>
+
+        <b>TOSS ANALYSIS</b>
+
+        <small>
+          Pre-match toss & conditions
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="box">
+
+      <div class="icon">📊</div>
+
+      <div>
+
+        <b>MATCH ANALYSIS</b>
+
+        <small>
+          Stats & team performance
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="box">
+
+      <div class="icon">🏏</div>
+
+      <div>
+
+        <b>SESSION INSIGHTS</b>
+
+        <small>
+          Match situation updates
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="box">
+
+      <div class="icon">👥</div>
+
+      <div>
+
+        <b>PLAYING XI</b>
+
+        <small>
+          Team news & key players
+        </small>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- STATS -->
+
+  <div class="stats">
+
+
+    <div class="stat">
+
+      <strong>DAILY</strong>
+
+      <span>
+        Cricket Content
+      </span>
+
+    </div>
+
+
+    <div class="stat">
+
+      <strong>LIVE</strong>
+
+      <span>
+        Match Updates
+      </span>
+
+    </div>
+
+
+    <div class="stat">
+
+      <strong>24×7</strong>
+
+      <span>
+        Channel Activity
+      </span>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- =========================
+       TELEGRAM BUTTON
+       
+       CLICK = SUBSCRIBE EVENT
+  ========================= -->
+
+  <a
+    class="join"
+    href="https://t.me/+fsVSx_gQ0rlmNjc1"
+    target="_blank"
+    rel="noopener"
+    onclick="fbq('track', 'Subscribe');"
+  >
+
+    🚀 &nbsp; JOIN TELEGRAM
+
+  </a>
+
+
+  <p class="note">
+
+    Cricket analysis, information & entertainment.
+    No guaranteed outcomes.
+
+  </p>
+
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     BOTTOM TICKER
+========================= -->
+
+<div class="ticker bottom">
+
+  <div class="track reverse">
+
+    <span>🟢 CRICKET UPDATE</span>
+
+    <span>🏏 NEXT MATCH • LIVE COVERAGE</span>
+
+    <span>⚡ TEAM NEWS & PLAYER INSIGHTS</span>
+
+    <span>🏆 BOMBAY CRICKET ANALYST</span>
+
+  </div>
+
+</div>
+
+
+</body>
+</html>
+```
