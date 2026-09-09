@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
 <title>Bombay Cricket Analyst</title>
 
 <!-- =========================
-     META PIXEL
+     META PIXEL CODE
 ========================= -->
 
 <script>
@@ -35,7 +34,8 @@ src="https://www.facebook.com/tr?id=937872818759096&ev=PageView&noscript=1"
 />
 </noscript>
 
-<!-- End Meta Pixel -->
+<!-- End Meta Pixel Code -->
+
 
 <style>
 
@@ -83,8 +83,9 @@ body{
 
 }
 
+
 /* =========================
-   PAPER TEXTURE
+   PAPER LINES
 ========================= */
 
 body:before{
@@ -110,7 +111,10 @@ body:before{
 
 }
 
-/* paper dots */
+
+/* =========================
+   PAPER DOTS
+========================= */
 
 body:after{
 
@@ -131,8 +135,9 @@ body:after{
 
 }
 
+
 /* =========================
-   HEADER TAPE
+   TOP TAPE
 ========================= */
 
 .tape{
@@ -143,7 +148,9 @@ body:after{
 
   left:50%;
 
-  transform:translateX(-50%) rotate(-2deg);
+  transform:
+  translateX(-50%)
+  rotate(-2deg);
 
   width:150px;
 
@@ -158,6 +165,7 @@ body:after{
   z-index:10;
 
 }
+
 
 /* =========================
    TOP NOTE
@@ -187,8 +195,9 @@ body:after{
 
 }
 
+
 /* =========================
-   MAIN
+   MAIN WRAPPER
 ========================= */
 
 .wrap{
@@ -211,6 +220,7 @@ body:after{
 
 }
 
+
 /* =========================
    PAPER CARD
 ========================= */
@@ -225,7 +235,7 @@ body:after{
 
   overflow:hidden;
 
-  padding:16px 14px 12px;
+  padding:16px 14px 13px;
 
   text-align:center;
 
@@ -233,7 +243,8 @@ body:after{
 
   border:2px solid #202a30;
 
-  border-radius:5px 9px 4px 8px;
+  border-radius:
+  5px 9px 4px 8px;
 
   box-shadow:
 
@@ -245,7 +256,8 @@ body:after{
 
 }
 
-/* hand drawn border */
+
+/* inner hand-drawn border */
 
 .card:before{
 
@@ -260,6 +272,7 @@ body:after{
   pointer-events:none;
 
 }
+
 
 /* =========================
    PIN
@@ -287,6 +300,7 @@ body:after{
 
 }
 
+
 /* =========================
    LOGO
 ========================= */
@@ -309,7 +323,8 @@ body:after{
 
   border:3px solid #18232b;
 
-  box-shadow:3px 4px 0 #18232b;
+  box-shadow:
+  3px 4px 0 #18232b;
 
   transform:rotate(-3deg);
 
@@ -329,6 +344,7 @@ body:after{
 
 }
 
+
 /* =========================
    BADGE
 ========================= */
@@ -337,7 +353,7 @@ body:after{
 
   display:inline-block;
 
-  padding:4px 11px;
+  padding:5px 12px;
 
   background:#ffe46b;
 
@@ -351,9 +367,11 @@ body:after{
 
   letter-spacing:.4px;
 
-  box-shadow:2px 2px 0 #1e282e;
+  box-shadow:
+  2px 2px 0 #1e282e;
 
 }
+
 
 /* =========================
    TITLE
@@ -361,9 +379,10 @@ body:after{
 
 h1{
 
-  margin:8px 0 1px;
+  margin:8px 0 2px;
 
-  font-size:clamp(30px,8vw,47px);
+  font-size:
+  clamp(30px,8vw,47px);
 
   line-height:.85;
 
@@ -388,10 +407,10 @@ h1 span{
   color:#c92121;
 
   text-decoration:
-
-    underline wavy #c92121 2px;
+  underline wavy #c92121 2px;
 
 }
+
 
 /* =========================
    SUBTITLE
@@ -409,8 +428,9 @@ h1 span{
 
 }
 
+
 /* =========================
-   MARKER LINE
+   MARKER
 ========================= */
 
 .marker{
@@ -419,7 +439,7 @@ h1 span{
 
   position:relative;
 
-  margin-bottom:9px;
+  margin-bottom:10px;
 
   padding:3px 8px;
 
@@ -455,19 +475,21 @@ h1 span{
 
 }
 
+
 /* =========================
-   FEATURE GRID
+   FEATURES
 ========================= */
 
 .grid{
 
   display:grid;
 
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:
+  repeat(2,1fr);
 
   gap:8px;
 
-  margin-bottom:8px;
+  margin-bottom:9px;
 
 }
 
@@ -491,9 +513,11 @@ h1 span{
 
   border:2px solid #29343a;
 
-  border-radius:4px 8px 5px 7px;
+  border-radius:
+  4px 8px 5px 7px;
 
-  box-shadow:3px 3px 0 #29343a;
+  box-shadow:
+  3px 3px 0 #29343a;
 
 }
 
@@ -513,11 +537,14 @@ h1 span{
   transform:rotate(-.8deg);
 }
 
+
+/* ICON */
+
 .icon{
 
-  width:29px;
+  width:31px;
 
-  height:29px;
+  height:31px;
 
   flex:none;
 
@@ -537,6 +564,9 @@ h1 span{
 
 }
 
+
+/* FEATURE TITLE */
+
 .box b{
 
   display:block;
@@ -546,6 +576,9 @@ h1 span{
   margin-bottom:2px;
 
 }
+
+
+/* FEATURE DESCRIPTION */
 
 .box small{
 
@@ -559,6 +592,7 @@ h1 span{
 
 }
 
+
 /* =========================
    STATS
 ========================= */
@@ -567,17 +601,18 @@ h1 span{
 
   display:grid;
 
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:
+  repeat(3,1fr);
 
   gap:7px;
 
-  margin-bottom:10px;
+  margin-bottom:12px;
 
 }
 
 .stat{
 
-  padding:6px 2px;
+  padding:7px 2px;
 
   background:#e9f5ff;
 
@@ -585,7 +620,8 @@ h1 span{
 
   border-radius:3px;
 
-  box-shadow:2px 3px 0 #27343b;
+  box-shadow:
+  2px 3px 0 #27343b;
 
 }
 
@@ -607,7 +643,7 @@ h1 span{
 
   color:#c92323;
 
-  font-size:14px;
+  font-size:15px;
 
   line-height:1;
 
@@ -623,8 +659,9 @@ h1 span{
 
 }
 
+
 /* =========================
-   HANDWRITTEN ARROW
+   ARROW
 ========================= */
 
 .arrow{
@@ -633,7 +670,7 @@ h1 span{
 
   right:25px;
 
-  bottom:74px;
+  bottom:80px;
 
   font-size:18px;
 
@@ -643,8 +680,9 @@ h1 span{
 
 }
 
+
 /* =========================
-   CTA
+   BIG TELEGRAM BUTTON
 ========================= */
 
 .join{
@@ -659,9 +697,14 @@ h1 span{
 
   width:100%;
 
-  min-height:51px;
+  min-height:64px;
 
-  border-radius:5px 9px 6px 4px;
+  margin-top:4px;
+
+  padding:8px 12px;
+
+  border-radius:
+  8px 12px 9px 6px;
 
   background:#19a85b;
 
@@ -671,43 +714,49 @@ h1 span{
 
   text-decoration:none;
 
-  font-size:17px;
+  font-size:21px;
 
   font-weight:1000;
 
-  letter-spacing:.3px;
+  letter-spacing:.5px;
 
   box-shadow:
 
-    4px 5px 0 #14251d;
+    5px 6px 0 #14251d,
+
+    0 8px 20px #19a85b55;
 
   transform:rotate(-.7deg);
 
   animation:cta 2.5s ease-in-out infinite;
 
+  cursor:pointer;
+
 }
+
+
+/* BUTTON ANIMATION */
 
 @keyframes cta{
 
   50%{
 
     transform:
-
-      rotate(.5deg)
-
-      scale(1.012);
+    rotate(.5deg)
+    scale(1.025);
 
   }
 
 }
 
+
 /* =========================
-   NOTE
+   DISCLAIMER
 ========================= */
 
 .note{
 
-  margin-top:7px;
+  margin-top:8px;
 
   font-family:Arial,sans-serif;
 
@@ -717,8 +766,9 @@ h1 span{
 
 }
 
+
 /* =========================
-   SIDE DOODLES
+   DOODLES
 ========================= */
 
 .doodle{
@@ -753,8 +803,9 @@ h1 span{
 
 }
 
+
 /* =========================
-   BOTTOM TAPE
+   BOTTOM NOTE
 ========================= */
 
 .bottom-note{
@@ -781,6 +832,7 @@ h1 span{
 
 }
 
+
 /* =========================
    SMALL HEIGHT
 ========================= */
@@ -789,13 +841,15 @@ h1 span{
 
   .wrap{
 
-    padding:28px 7px 25px;
+    padding-top:28px;
+
+    padding-bottom:25px;
 
   }
 
   .card{
 
-    padding:10px 11px 9px;
+    padding:10px 11px 10px;
 
   }
 
@@ -857,9 +911,9 @@ h1 span{
 
   .icon{
 
-    width:24px;
+    width:25px;
 
-    height:24px;
+    height:25px;
 
     font-size:11px;
 
@@ -881,7 +935,7 @@ h1 span{
 
     gap:5px;
 
-    margin-bottom:7px;
+    margin-bottom:9px;
 
   }
 
@@ -893,7 +947,7 @@ h1 span{
 
   .stat strong{
 
-    font-size:11px;
+    font-size:12px;
 
   }
 
@@ -903,11 +957,22 @@ h1 span{
 
   }
 
+
+  /* BIG MOBILE BUTTON */
+
   .join{
 
-    min-height:43px;
+    min-height:57px;
 
-    font-size:13px;
+    font-size:18px;
+
+    border-width:3px;
+
+    box-shadow:
+
+      4px 5px 0 #14251d,
+
+      0 7px 18px #19a85b55;
 
   }
 
@@ -918,6 +983,7 @@ h1 span{
   }
 
 }
+
 
 /* =========================
    VERY SMALL MOBILE
@@ -1003,11 +1069,19 @@ h1 span{
 
   }
 
+
+  /* BIG BUTTON */
+
   .join{
 
-    min-height:40px;
+    min-height:53px;
 
-    font-size:12px;
+    font-size:16px;
+
+    border-width:3px;
+
+    box-shadow:
+      4px 5px 0 #14251d;
 
   }
 
@@ -1022,9 +1096,13 @@ h1 span{
 </style>
 </head>
 
+
 <body>
 
-<!-- PAPER DETAILS -->
+
+<!-- =========================
+     PAPER DECORATION
+========================= -->
 
 <div class="tape"></div>
 
@@ -1037,17 +1115,29 @@ h1 span{
 </div>
 
 
-<!-- MAIN -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <main class="wrap">
 
 <section class="card">
 
+
+  <!-- PIN -->
+
   <div class="pin"></div>
 
-  <div class="doodle d1">↗</div>
 
-  <div class="doodle d2">★</div>
+  <!-- DOODLES -->
+
+  <div class="doodle d1">
+    ↗
+  </div>
+
+  <div class="doodle d2">
+    ★
+  </div>
 
 
   <!-- LOGO -->
@@ -1077,10 +1167,14 @@ h1 span{
 
     BOMBAY
 
-    <span>CRICKET ANALYST</span>
+    <span>
+      CRICKET ANALYST
+    </span>
 
   </h1>
 
+
+  <!-- SUBTITLE -->
 
   <p class="sub">
 
@@ -1089,6 +1183,8 @@ h1 span{
   </p>
 
 
+  <!-- HIGHLIGHT -->
+
   <div class="marker">
 
     SMART CRICKET ANALYSIS & MATCH INSIGHTS
@@ -1096,18 +1192,24 @@ h1 span{
   </div>
 
 
-  <!-- FEATURES -->
+  <!-- =========================
+       FEATURES
+  ========================= -->
 
   <div class="grid">
 
 
     <div class="box">
 
-      <div class="icon">🎯</div>
+      <div class="icon">
+        🎯
+      </div>
 
       <div>
 
-        <b>TOSS ANALYSIS</b>
+        <b>
+          TOSS ANALYSIS
+        </b>
 
         <small>
           Pre-match toss & conditions
@@ -1120,11 +1222,15 @@ h1 span{
 
     <div class="box">
 
-      <div class="icon">📊</div>
+      <div class="icon">
+        📊
+      </div>
 
       <div>
 
-        <b>MATCH ANALYSIS</b>
+        <b>
+          MATCH ANALYSIS
+        </b>
 
         <small>
           Stats & team performance
@@ -1137,11 +1243,15 @@ h1 span{
 
     <div class="box">
 
-      <div class="icon">🏏</div>
+      <div class="icon">
+        🏏
+      </div>
 
       <div>
 
-        <b>SESSION INSIGHTS</b>
+        <b>
+          SESSION INSIGHTS
+        </b>
 
         <small>
           Match situation updates
@@ -1154,11 +1264,15 @@ h1 span{
 
     <div class="box">
 
-      <div class="icon">👥</div>
+      <div class="icon">
+        👥
+      </div>
 
       <div>
 
-        <b>PLAYING XI</b>
+        <b>
+          PLAYING XI
+        </b>
 
         <small>
           Team news & key players
@@ -1172,14 +1286,18 @@ h1 span{
   </div>
 
 
-  <!-- STATS -->
+  <!-- =========================
+       STATS
+  ========================= -->
 
   <div class="stats">
 
 
     <div class="stat">
 
-      <strong>DAILY</strong>
+      <strong>
+        DAILY
+      </strong>
 
       <span>
         Cricket Content
@@ -1190,7 +1308,9 @@ h1 span{
 
     <div class="stat">
 
-      <strong>LIVE</strong>
+      <strong>
+        LIVE
+      </strong>
 
       <span>
         Match Updates
@@ -1201,7 +1321,9 @@ h1 span{
 
     <div class="stat">
 
-      <strong>24×7</strong>
+      <strong>
+        24×7
+      </strong>
 
       <span>
         Channel Activity
@@ -1213,9 +1335,12 @@ h1 span{
   </div>
 
 
-  <!-- CTA
-       CLICK = SUBSCRIBE EVENT
-  -->
+  <!-- =========================
+       TELEGRAM BUTTON
+
+       Every click fires:
+       Meta Pixel Subscribe
+  ========================= -->
 
   <a
     class="join"
@@ -1230,6 +1355,8 @@ h1 span{
   </a>
 
 
+  <!-- DISCLAIMER -->
+
   <p class="note">
 
     Cricket analysis, information & entertainment.
@@ -1237,9 +1364,11 @@ h1 span{
 
   </p>
 
+
 </section>
 
 </main>
+
 
 </body>
 </html>
