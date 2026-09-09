@@ -5,13 +5,13 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#05080f">
 
 <title>Bombay Cricket Analyst</title>
 
 <!-- =========================
-     META PIXEL CODE
+     META PIXEL
 ========================= -->
+
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -35,9 +35,13 @@ src="https://www.facebook.com/tr?id=937872818759096&ev=PageView&noscript=1"
 />
 </noscript>
 
-<!-- End Meta Pixel Code -->
+<!-- End Meta Pixel -->
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
   box-sizing:border-box;
@@ -45,172 +49,142 @@ src="https://www.facebook.com/tr?id=937872818759096&ev=PageView&noscript=1"
   padding:0;
 }
 
-html,body{
+html,
+body{
   width:100%;
   height:100%;
   overflow:hidden;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  color:#fff;
+
+  font-family:
+  "Comic Sans MS",
+  "Segoe Print",
+  "Bradley Hand",
+  cursive;
+
+  color:#17202a;
+
   background:
-    radial-gradient(circle at 50% 20%,#143e68 0%,transparent 35%),
-    radial-gradient(circle at 0% 100%,#003b5c 0%,transparent 30%),
-    linear-gradient(135deg,#02050a,#07111d 55%,#020409);
+
+  radial-gradient(
+    circle at 20% 10%,
+    #fff9df,
+    transparent 30%
+  ),
+
+  linear-gradient(
+    135deg,
+    #f5edcf,
+    #fffdf0 45%,
+    #eee5c5
+  );
+
 }
 
 /* =========================
-   BACKGROUND
+   PAPER TEXTURE
 ========================= */
 
-.bg{
+body:before{
+
+  content:"";
+
   position:fixed;
+
   inset:0;
-  overflow:hidden;
+
   pointer-events:none;
-}
 
-.light{
-  position:absolute;
-  width:240px;
-  height:240px;
-  border-radius:50%;
-  filter:blur(70px);
-  opacity:.16;
-  animation:float 7s ease-in-out infinite;
-}
-
-.l1{
-  background:#00aaff;
-  left:-100px;
-  top:-100px;
-}
-
-.l2{
-  background:#ffd500;
-  right:-110px;
-  top:10%;
-  animation-delay:2s;
-}
-
-.l3{
-  background:#0077ff;
-  left:35%;
-  bottom:-130px;
-  animation-delay:4s;
-}
-
-@keyframes float{
-  50%{
-    transform:scale(1.25);
-    opacity:.28;
-  }
-}
-
-/* Stadium */
-
-.stadium{
-  position:absolute;
-  width:150%;
-  height:42%;
-  left:-25%;
-  bottom:-14%;
-  border-radius:50% 50% 0 0;
+  opacity:.35;
 
   background:
-    repeating-linear-gradient(
-      0deg,
-      #061c2b 0 8px,
-      #082a3c 9px 17px
-    );
 
-  transform:perspective(500px) rotateX(14deg);
+  repeating-linear-gradient(
+    0deg,
+    transparent 0 27px,
+    #5c8db022 28px,
+    transparent 29px
+  );
 
-  box-shadow:
-    0 -30px 90px #008cff22,
-    inset 0 20px 50px #0008;
 }
 
-/* Stadium lights */
+/* paper dots */
 
-.lights{
-  position:absolute;
-  width:100%;
-  height:35%;
-  top:8%;
-  display:flex;
-  justify-content:space-between;
-  padding:0 10px;
-  opacity:.5;
+body:after{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  pointer-events:none;
+
+  opacity:.15;
+
+  background-image:
+  radial-gradient(#000 0.6px,transparent .7px);
+
+  background-size:6px 6px;
+
 }
 
-.lights span{
-  width:90px;
-  height:5px;
-  border-radius:50%;
+/* =========================
+   HEADER TAPE
+========================= */
+
+.tape{
+
+  position:fixed;
+
+  top:8px;
+
+  left:50%;
+
+  transform:translateX(-50%) rotate(-2deg);
+
+  width:150px;
+
+  height:25px;
+
+  background:#e7d59b;
+
+  opacity:.75;
+
+  box-shadow:0 2px 4px #0002;
+
+  z-index:10;
+
+}
+
+/* =========================
+   TOP NOTE
+========================= */
+
+.top-note{
+
+  position:fixed;
+
+  top:24px;
+
+  left:12px;
+
+  padding:6px 12px;
+
   background:#fff;
 
-  box-shadow:
-    0 0 12px #fff,
-    0 0 30px #7ddcff,
-    0 0 70px #008cff;
-}
+  border:2px dashed #202b35;
 
-/* =========================
-   TICKER
-========================= */
+  transform:rotate(-3deg);
 
-.ticker{
-  position:fixed;
-  z-index:20;
-  left:0;
-  width:100%;
-  height:27px;
-  overflow:hidden;
-  white-space:nowrap;
-
-  background:#02060cea;
-  border-bottom:1px solid #20aaff55;
-}
-
-.bottom{
-  top:auto;
-  bottom:0;
-  border-top:1px solid #20aaff55;
-  border-bottom:0;
-}
-
-.track{
-  height:100%;
-  display:inline-flex;
-  align-items:center;
-  gap:45px;
-  padding-left:100%;
-  min-width:max-content;
-
-  animation:scroll 28s linear infinite;
-}
-
-.reverse{
-  animation-direction:reverse;
-}
-
-.track span{
   font-size:9px;
-  font-weight:900;
-  letter-spacing:.7px;
-  color:#eaf7ff;
-}
 
-@keyframes scroll{
-  from{
-    transform:translateX(0);
-  }
+  font-weight:bold;
 
-  to{
-    transform:translateX(-100%);
-  }
+  z-index:8;
+
 }
 
 /* =========================
@@ -218,67 +192,99 @@ body{
 ========================= */
 
 .wrap{
-  position:relative;
-  z-index:5;
 
-  width:min(100%,680px);
+  position:relative;
+
+  width:min(100%,600px);
+
   height:100dvh;
 
   margin:auto;
-  padding:34px 8px 31px;
+
+  padding:34px 9px 28px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
 }
 
+/* =========================
+   PAPER CARD
+========================= */
+
 .card{
-  width:100%;
-  max-height:94dvh;
-  overflow:hidden;
+
   position:relative;
+
+  width:100%;
+
+  max-height:95dvh;
+
+  overflow:hidden;
+
+  padding:16px 14px 12px;
 
   text-align:center;
 
-  padding:15px 15px 12px;
+  background:#fffdf3;
 
-  border-radius:28px;
+  border:2px solid #202a30;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(11,28,45,.94),
-      rgba(2,8,15,.97)
-    );
-
-  border:1px solid rgba(55,181,255,.38);
+  border-radius:5px 9px 4px 8px;
 
   box-shadow:
-    0 25px 70px #000b,
-    0 0 50px #008cff1c,
-    inset 0 1px 0 #ffffff12;
+
+    5px 6px 0 #202a3020,
+
+    0 12px 25px #0002;
+
+  transform:rotate(-.25deg);
+
 }
 
-/* Top shine */
+/* hand drawn border */
 
 .card:before{
+
   content:"";
 
   position:absolute;
-  left:10%;
-  right:10%;
-  top:0;
 
-  height:1px;
+  inset:5px;
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #00c8ff,
-      #ffd400,
-      transparent
-    );
+  border:1px dashed #202a3066;
+
+  pointer-events:none;
+
+}
+
+/* =========================
+   PIN
+========================= */
+
+.pin{
+
+  position:absolute;
+
+  top:7px;
+
+  right:15px;
+
+  width:13px;
+
+  height:13px;
+
+  border-radius:50%;
+
+  background:#d72e2e;
+
+  border:2px solid #8d1515;
+
+  box-shadow:1px 2px 3px #0005;
+
 }
 
 /* =========================
@@ -286,50 +292,41 @@ body{
 ========================= */
 
 .logo{
-  width:92px;
-  height:92px;
+
+  position:relative;
+
+  width:78px;
+
+  height:78px;
 
   margin:0 auto 7px;
 
   border-radius:50%;
+
   padding:3px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #00bfff,
-      #ffd400,
-      #00aaff
-    );
+  background:#fff;
 
-  box-shadow:
-    0 0 25px #00aaff55,
-    0 0 50px #ffd00018;
+  border:3px solid #18232b;
 
-  animation:logoPulse 4s ease-in-out infinite;
+  box-shadow:3px 4px 0 #18232b;
+
+  transform:rotate(-3deg);
+
 }
 
 .logo img{
+
   width:100%;
+
   height:100%;
 
   display:block;
 
-  border-radius:50%;
-
   object-fit:cover;
 
-  border:3px solid #06111c;
-}
+  border-radius:50%;
 
-@keyframes logoPulse{
-  50%{
-    transform:scale(1.035);
-
-    box-shadow:
-      0 0 35px #00aaff77,
-      0 0 55px #ffd00022;
-  }
 }
 
 /* =========================
@@ -337,24 +334,25 @@ body{
 ========================= */
 
 .badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
 
-  padding:6px 13px;
+  display:inline-block;
 
-  border-radius:30px;
+  padding:4px 11px;
 
-  background:#071b2c;
+  background:#ffe46b;
 
-  border:1px solid #1baaff66;
+  border:2px solid #1e282e;
 
-  color:#9edfff;
+  transform:rotate(1deg);
 
-  font-size:9px;
+  font-size:8px;
+
   font-weight:900;
 
-  letter-spacing:.8px;
+  letter-spacing:.4px;
+
+  box-shadow:2px 2px 0 #1e282e;
+
 }
 
 /* =========================
@@ -362,172 +360,203 @@ body{
 ========================= */
 
 h1{
-  margin:7px 0 2px;
 
-  font-size:clamp(32px,8vw,52px);
+  margin:8px 0 1px;
 
-  line-height:.9;
+  font-size:clamp(30px,8vw,47px);
+
+  line-height:.85;
 
   font-weight:1000;
 
-  letter-spacing:-1.5px;
+  letter-spacing:-2px;
 
-  color:#fff;
+  transform:rotate(-1deg);
 
-  text-shadow:0 0 25px #008cff35;
+  color:#18242c;
+
 }
 
 h1 span{
+
   display:block;
 
   margin-top:5px;
 
-  font-size:.55em;
+  font-size:.62em;
 
-  letter-spacing:1.2px;
+  color:#c92121;
 
-  font-style:italic;
+  text-decoration:
 
-  background:
-    linear-gradient(
-      90deg,
-      #ffe000,
-      #fff,
-      #00c8ff
-    );
+    underline wavy #c92121 2px;
 
-  -webkit-background-clip:text;
-
-  color:transparent;
-}
-
-.sub{
-  margin:7px 0 8px;
-
-  color:#a9c3d7;
-
-  font-size:11px;
-
-  font-weight:700;
-
-  letter-spacing:.4px;
 }
 
 /* =========================
-   TAG
+   SUBTITLE
 ========================= */
 
-.tag{
+.sub{
+
+  margin:7px 0 7px;
+
+  font-size:11px;
+
+  font-weight:bold;
+
+  color:#46545d;
+
+}
+
+/* =========================
+   MARKER LINE
+========================= */
+
+.marker{
+
   display:inline-block;
+
+  position:relative;
 
   margin-bottom:9px;
 
-  padding:5px 12px;
-
-  border-radius:6px;
-
-  background:#08233b;
-
-  border-left:3px solid #ffd400;
-
-  border-right:1px solid #168dff55;
-
-  color:#e5f7ff;
+  padding:3px 8px;
 
   font-size:8px;
 
   font-weight:900;
 
-  letter-spacing:.7px;
+  transform:rotate(-1deg);
+
+}
+
+.marker:before{
+
+  content:"";
+
+  position:absolute;
+
+  z-index:-1;
+
+  left:-5px;
+
+  right:-5px;
+
+  top:2px;
+
+  bottom:1px;
+
+  background:#8fe5a0;
+
+  transform:rotate(-1deg);
+
+  opacity:.75;
+
 }
 
 /* =========================
-   FEATURES
+   FEATURE GRID
 ========================= */
 
 .grid{
+
   display:grid;
 
   grid-template-columns:repeat(2,1fr);
 
-  gap:7px;
+  gap:8px;
 
   margin-bottom:8px;
+
 }
 
 .box{
-  min-height:57px;
 
-  padding:8px 7px;
+  position:relative;
+
+  min-height:58px;
+
+  padding:7px;
 
   display:flex;
 
   align-items:center;
 
+  gap:7px;
+
   text-align:left;
 
-  gap:8px;
+  background:#fff;
 
-  border-radius:13px;
+  border:2px solid #29343a;
 
-  background:
-    linear-gradient(
-      135deg,
-      #0a2236,
-      #06121f
-    );
+  border-radius:4px 8px 5px 7px;
 
-  border:1px solid #168dff44;
+  box-shadow:3px 3px 0 #29343a;
 
-  box-shadow:
-    inset 0 1px 0 #ffffff08;
-
-  transition:.25s;
 }
 
-.box:hover{
-  border-color:#ffd40088;
-  transform:translateY(-2px);
+.box:nth-child(1){
+  transform:rotate(-1deg);
+}
+
+.box:nth-child(2){
+  transform:rotate(.8deg);
+}
+
+.box:nth-child(3){
+  transform:rotate(.6deg);
+}
+
+.box:nth-child(4){
+  transform:rotate(-.8deg);
 }
 
 .icon{
-  width:32px;
-  height:32px;
+
+  width:29px;
+
+  height:29px;
 
   flex:none;
 
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
-  border-radius:9px;
+  background:#ffe16a;
 
-  background:#082a43;
+  border:2px solid #202a30;
 
-  border:1px solid #20aaff44;
+  border-radius:50%;
 
-  font-size:16px;
+  font-size:14px;
+
 }
 
 .box b{
+
   display:block;
 
-  color:#fff;
-
-  font-size:9px;
+  font-size:8.5px;
 
   margin-bottom:2px;
+
 }
 
 .box small{
+
   display:block;
 
-  color:#91aabd;
+  color:#68757c;
 
-  font-size:7.5px;
+  font-size:6.8px;
 
-  line-height:1.2;
+  line-height:1.15;
+
 }
 
 /* =========================
@@ -535,193 +564,359 @@ h1 span{
 ========================= */
 
 .stats{
+
   display:grid;
 
   grid-template-columns:repeat(3,1fr);
 
-  gap:6px;
+  gap:7px;
 
-  margin-bottom:9px;
+  margin-bottom:10px;
+
 }
 
 .stat{
-  padding:7px 3px;
 
-  border-radius:11px;
+  padding:6px 2px;
 
-  background:#030a12;
+  background:#e9f5ff;
 
-  border:1px solid #1b8ed944;
+  border:2px solid #27343b;
+
+  border-radius:3px;
+
+  box-shadow:2px 3px 0 #27343b;
+
+}
+
+.stat:nth-child(1){
+  transform:rotate(-1deg);
+}
+
+.stat:nth-child(2){
+  transform:rotate(.5deg);
+}
+
+.stat:nth-child(3){
+  transform:rotate(1deg);
 }
 
 .stat strong{
+
   display:block;
 
-  color:#ffd900;
+  color:#c92323;
 
-  font-size:15px;
+  font-size:14px;
 
-  line-height:1.1;
+  line-height:1;
+
 }
 
 .stat span{
-  font-size:7px;
 
-  color:#829bad;
+  font-size:6.5px;
+
+  font-weight:bold;
+
+  color:#55636b;
+
 }
 
 /* =========================
-   TELEGRAM CTA
+   HANDWRITTEN ARROW
+========================= */
+
+.arrow{
+
+  position:absolute;
+
+  right:25px;
+
+  bottom:74px;
+
+  font-size:18px;
+
+  transform:rotate(12deg);
+
+  color:#c92323;
+
+}
+
+/* =========================
+   CTA
 ========================= */
 
 .join{
-  min-height:52px;
 
-  width:100%;
+  position:relative;
 
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
-  border-radius:16px;
+  width:100%;
 
-  background:
-    linear-gradient(
-      100deg,
-      #ffd400,
-      #ffb700,
-      #ffe600
-    );
+  min-height:51px;
 
-  color:#050b12;
+  border-radius:5px 9px 6px 4px;
+
+  background:#19a85b;
+
+  border:3px solid #14251d;
+
+  color:#fff;
 
   text-decoration:none;
 
-  font-size:16px;
+  font-size:17px;
 
   font-weight:1000;
 
-  letter-spacing:.2px;
+  letter-spacing:.3px;
 
   box-shadow:
-    0 8px 25px #ffd0002d;
 
-  animation:buttonPulse 2.5s ease-in-out infinite;
+    4px 5px 0 #14251d;
 
-  cursor:pointer;
+  transform:rotate(-.7deg);
+
+  animation:cta 2.5s ease-in-out infinite;
+
 }
 
-.join:hover{
-  transform:translateY(-1px);
-}
+@keyframes cta{
 
-@keyframes buttonPulse{
   50%{
-    box-shadow:
-      0 10px 35px #ffd00055;
+
+    transform:
+
+      rotate(.5deg)
+
+      scale(1.012);
+
   }
-}
 
-.note{
-  margin-top:5px;
-
-  color:#687e90;
-
-  font-size:7px;
 }
 
 /* =========================
-   MOBILE
+   NOTE
+========================= */
+
+.note{
+
+  margin-top:7px;
+
+  font-family:Arial,sans-serif;
+
+  color:#7c8588;
+
+  font-size:6.5px;
+
+}
+
+/* =========================
+   SIDE DOODLES
+========================= */
+
+.doodle{
+
+  position:absolute;
+
+  color:#c92323;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+}
+
+.d1{
+
+  left:7px;
+
+  top:45%;
+
+  transform:rotate(-15deg);
+
+}
+
+.d2{
+
+  right:6px;
+
+  top:33%;
+
+  transform:rotate(14deg);
+
+}
+
+/* =========================
+   BOTTOM TAPE
+========================= */
+
+.bottom-note{
+
+  position:fixed;
+
+  bottom:25px;
+
+  right:9px;
+
+  padding:5px 10px;
+
+  background:#ffe68a;
+
+  border:1px solid #9d8b48;
+
+  transform:rotate(3deg);
+
+  font-size:7px;
+
+  font-weight:bold;
+
+  z-index:10;
+
+}
+
+/* =========================
+   SMALL HEIGHT
 ========================= */
 
 @media(max-height:720px){
 
   .wrap{
-    padding-top:30px;
-    padding-bottom:28px;
+
+    padding:28px 7px 25px;
+
   }
 
   .card{
+
     padding:10px 11px 9px;
-    border-radius:23px;
+
   }
 
   .logo{
-    width:72px;
-    height:72px;
+
+    width:62px;
+
+    height:62px;
+
+    margin-bottom:5px;
+
   }
 
   .badge{
-    padding:4px 10px;
-    font-size:7.5px;
+
+    font-size:7px;
+
+    padding:3px 8px;
+
   }
 
   h1{
+
     font-size:27px;
+
   }
 
   .sub{
-    font-size:9px;
+
+    font-size:8px;
+
     margin:5px 0;
+
   }
 
-  .tag{
-    font-size:7px;
-    padding:4px 9px;
+  .marker{
+
+    font-size:6.5px;
+
     margin-bottom:6px;
+
   }
 
   .grid{
+
     gap:5px;
+
     margin-bottom:6px;
+
   }
 
   .box{
-    min-height:46px;
+
+    min-height:45px;
+
     padding:5px;
-    gap:6px;
+
   }
 
   .icon{
-    width:27px;
-    height:27px;
-    font-size:13px;
+
+    width:24px;
+
+    height:24px;
+
+    font-size:11px;
+
   }
 
   .box b{
-    font-size:8px;
+
+    font-size:7.5px;
+
   }
 
   .box small{
-    font-size:6.5px;
+
+    font-size:6px;
+
   }
 
   .stats{
-    margin-bottom:6px;
+
+    gap:5px;
+
+    margin-bottom:7px;
+
   }
 
   .stat{
+
     padding:5px 2px;
+
   }
 
   .stat strong{
-    font-size:12px;
+
+    font-size:11px;
+
   }
 
   .stat span{
-    font-size:6px;
+
+    font-size:5.8px;
+
   }
 
   .join{
-    min-height:44px;
-    border-radius:14px;
+
+    min-height:43px;
+
     font-size:13px;
+
   }
 
   .note{
-    font-size:6px;
+
+    font-size:5.5px;
+
   }
+
 }
 
 /* =========================
@@ -730,69 +925,98 @@ h1 span{
 
 @media(max-width:380px){
 
-  .ticker{
-    height:23px;
-  }
+  .top-note,
+  .bottom-note,
+  .doodle{
 
-  .track{
-    gap:25px;
-  }
+    display:none;
 
-  .track span{
-    font-size:7px;
   }
 
   .wrap{
-    padding:26px 4px;
+
+    padding:25px 4px;
+
   }
 
   .card{
+
     padding:7px;
+
   }
 
   .logo{
-    width:64px;
-    height:64px;
+
+    width:55px;
+
+    height:55px;
+
   }
 
   h1{
+
     font-size:23px;
+
   }
 
   .sub{
-    font-size:8px;
+
+    font-size:7.5px;
+
   }
 
   .grid{
+
     gap:4px;
+
   }
 
   .box{
-    min-height:42px;
+
+    min-height:40px;
+
+    padding:4px;
+
+    gap:5px;
+
   }
 
   .icon{
-    width:24px;
-    height:24px;
-    font-size:11px;
+
+    width:22px;
+
+    height:22px;
+
+    font-size:10px;
+
   }
 
   .box b{
-    font-size:7.5px;
+
+    font-size:7px;
+
   }
 
   .box small{
-    font-size:6px;
+
+    font-size:5.5px;
+
   }
 
   .join{
-    min-height:41px;
+
+    min-height:40px;
+
     font-size:12px;
+
   }
 
   .note{
+
     display:none;
+
   }
+
 }
 
 </style>
@@ -800,52 +1024,31 @@ h1 span{
 
 <body>
 
-<!-- =========================
-     BACKGROUND
-========================= -->
+<!-- PAPER DETAILS -->
 
-<div class="bg">
+<div class="tape"></div>
 
-  <div class="light l1"></div>
-  <div class="light l2"></div>
-  <div class="light l3"></div>
+<div class="top-note">
+  📝 MATCH NOTES
+</div>
 
-  <div class="lights">
-    <span></span>
-    <span></span>
-  </div>
-
-  <div class="stadium"></div>
-
+<div class="bottom-note">
+  🏏 GAME ON!
 </div>
 
 
-<!-- =========================
-     TOP TICKER
-========================= -->
-
-<div class="ticker">
-
-  <div class="track">
-
-    <span>🏏 CRICKET ANALYSIS</span>
-    <span>⚡ MATCH INSIGHTS</span>
-    <span>🏆 TOSS ANALYSIS</span>
-    <span>👥 PLAYING XI</span>
-    <span>📊 TEAM PERFORMANCE</span>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     MAIN CARD
-========================= -->
+<!-- MAIN -->
 
 <main class="wrap">
 
 <section class="card">
+
+  <div class="pin"></div>
+
+  <div class="doodle d1">↗</div>
+
+  <div class="doodle d2">★</div>
+
 
   <!-- LOGO -->
 
@@ -886,9 +1089,7 @@ h1 span{
   </p>
 
 
-  <!-- TAG -->
-
-  <div class="tag">
+  <div class="marker">
 
     SMART CRICKET ANALYSIS & MATCH INSIGHTS
 
@@ -1012,11 +1213,9 @@ h1 span{
   </div>
 
 
-  <!-- =========================
-       TELEGRAM BUTTON
-       
+  <!-- CTA
        CLICK = SUBSCRIBE EVENT
-  ========================= -->
+  -->
 
   <a
     class="join"
@@ -1038,32 +1237,9 @@ h1 span{
 
   </p>
 
-
 </section>
 
 </main>
-
-
-<!-- =========================
-     BOTTOM TICKER
-========================= -->
-
-<div class="ticker bottom">
-
-  <div class="track reverse">
-
-    <span>🟢 CRICKET UPDATE</span>
-
-    <span>🏏 NEXT MATCH • LIVE COVERAGE</span>
-
-    <span>⚡ TEAM NEWS & PLAYER INSIGHTS</span>
-
-    <span>🏆 BOMBAY CRICKET ANALYST</span>
-
-  </div>
-
-</div>
-
 
 </body>
 </html>
